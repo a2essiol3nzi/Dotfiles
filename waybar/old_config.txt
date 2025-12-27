@@ -1,0 +1,121 @@
+// -*- mode: json -*-
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "clock#1",
+    "clock#2"
+  ],
+  "modules-right": [
+    "tray",
+    "group/expand"
+  ],
+  "clock#1": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+  "clock#2": {
+    "format": "{:%b,%d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#fAfBfC'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_up",
+      "on-click": "shift_down"
+    }
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "",
+      "visible": "",
+      "urgent": "",
+      "default": ""
+    },
+    "always-visible": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume:2}%",
+    "format-bluetooth": " {volume}%",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5
+  },
+  "memory": {
+    "interval": 5,
+    "format": "Mem {}%"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "CPU{usage:2}%"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "󰂄 {capacity}%"
+  },
+  "network": {
+    "format-icons": {
+      "wifi": "",
+      "ethernet": "",
+      "disconnected": ""
+    },
+    "format": "{icon} ",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "foot nmtui"
+  },
+  "tray": {
+    "icon-size": 16
+  },
+  "custom/expand": {
+    "format": " ",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/expand",
+      "battery",
+      "network",
+      "cpu",
+      "memory",
+      "pulseaudio"
+    ]
+  }
+}

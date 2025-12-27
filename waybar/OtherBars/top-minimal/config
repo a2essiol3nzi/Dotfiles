@@ -1,0 +1,123 @@
+//======================================================//
+// Waybar GH page:                                      //
+// https://github.com/Alexays/Waybar?tab=readme-ov-file //
+//                                                      //
+// Config, style.css GH Page:                           //
+// https://github.com/elifouts/Dotfiles                 //
+//======================================================//
+{
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "clock",
+    "tray"
+  ],
+  "modules-center": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "group/expand",
+    "bluetooth",
+    "network",
+    "battery"
+  ],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "",
+      "visible": "",
+      "urgent": "",
+      "default": "",
+    }
+  },
+  "clock": {
+    "format": "{:%I:%M %p} ",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#fAfBfC'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_up",
+      "on-click": "shift_down"
+    }
+  },
+  "network": {
+    "format-icons": {
+      "wifi": "",
+      "ethernet": "",
+      "disconnected": "",
+    },
+    "format": "{icon}",
+    "tooltip-format-disconnected": "Error",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    // "on-click": "nm-applet",
+    "on-click": "foot nmtui"
+  },
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "format-alt": "{device_alias} 󰂯",
+    "on-click-right": "bluetoothctl power off"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "󰂄 {capacity}%"
+  },
+  "custom/expand": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/endpoint": {
+    "format": "|",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/expand",
+      "cpu",
+      "memory",
+      "temperature",
+      "custom/endpoint"
+    ],
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠",
+    "tooltip": true
+  },
+  "memory": {
+    "interval": 5,
+    "format": ""
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "",
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+}

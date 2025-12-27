@@ -1,0 +1,59 @@
+# editor theme, by default it's the purple one
+theme = "catppuccin_mocha"
+
+[editor]
+scrolloff = 999
+line-number = "relative"
+bufferline = "multiple" # shows bufferline when more than one buffer
+mouse = false
+
+
+# Render whitespace characters
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "none"
+
+
+# changes the cursor shape depending on the mode you're in. 
+[editor.cursor-shape] 
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.soft-wrap]
+enable = true
+
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+#character = "▏"  # Some characters that work well: "▏", "┆", "┊", "⸽"
+
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "version-control", "read-only-indicator", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+
+[keys.normal]
+# estende la selezione sopra invece che sotto
+X = "extend_line_above"
+# Ctrl + w per chiudere il buffer corrente
+"C-w" = ":buffer-close"
+# Ctrl + s per salvare un file
+"C-s" = ":w"
+
+[keys.select]
+"{" = "goto_next_paragraph"
+"}" = "goto_prev_paragraph"
+
+[keys.insert]
+# Use `kj` to escape from insert mode to normal mode
+k = { j = "normal_mode" }

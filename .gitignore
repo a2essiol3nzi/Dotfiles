@@ -1,0 +1,16 @@
+# Suckless build artifacts
+*.o
+*.out
+config.h
+dwm
+st
+dmenu
+slock
+slstatus
+
+# System files
+.DS_Store
+*~
+
+# Exclude the sync script from the repository
+sync.sh

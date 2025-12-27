@@ -1,0 +1,22 @@
+/* Font globale */
+* {
+  font-family: "Adwaita Sans";
+  font-size: 15px;
+}
+
+/* Finestra principale */
+window#waybar {
+  background: #292b2e;
+  color: #fdf6e3;
+}
+
+#clock.1,
+#clock.2,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#network,
+#tray {
+  padding: 0 7px;
+}
