@@ -13,4 +13,4 @@ slstatus
 *~
 
 # Exclude the sync script from the repository
-sync.sh
+dotsync.sh

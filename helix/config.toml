@@ -6,6 +6,7 @@ scrolloff = 999
 line-number = "relative"
 bufferline = "multiple" # shows bufferline when more than one buffer
 mouse = false
+color-modes = true
 
 
 # Render whitespace characters
@@ -55,5 +56,5 @@ X = "extend_line_above"
 "}" = "goto_prev_paragraph"
 
 [keys.insert]
-# Use `kj` to escape from insert mode to normal mode
-k = { j = "normal_mode" }
+# Use `jk` to escape from insert mode to normal mode
+j = { k = "normal_mode" }
