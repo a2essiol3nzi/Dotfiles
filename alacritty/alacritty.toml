@@ -1,0 +1,42 @@
+[general]
+# Configurazione di Alacritty (TOML)
+
+# Importa i colori generati da Pywal
+import = ["/home/axel/.cache/wal/colors-alacritty.toml"]
+
+
+# Sezione relativa alle impostazioni della finestra
+[window]
+# Imposta il rientro interno (padding) orizzontale (x) e verticale (y)
+padding = { x = 3, y = 3 }
+# Regola il padding dinamicamente per mantenere il contenuto centrato
+dynamic_padding = true
+# Imposta l'opacità dello sfondo (0.0 è trasparente, 1.0 è opaco)
+opacity = 0.90
+# Gestisce le decorazioni della finestra (setta a "full" per riavere i bordi)
+decorations = "none"
+
+# Sezione relativa alle impostazioni dei caratteri
+[font]
+# Imposta la dimensione del carattere
+size = 13.0
+
+# Sottosezione per lo stile del carattere normale
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+# Sottosezione per lo stile del carattere in grassetto
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+# Sezione relativa alle impostazioni del cursore
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+# Sezione per le variabili d'ambiente
+[env]
+# Definisce la variabile TERM per identificare il terminale nel sistema
+TERM = "alacritty"
+

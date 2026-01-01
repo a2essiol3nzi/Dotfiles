@@ -25,7 +25,7 @@ Here are some snapshots of the setup:
 This repository includes configurations for:
 
 - **Window Managers**: `dwm`, `sway`, `niri`
-- **Terminals**: `st`, `foot`
+- **Terminals**: `alacritty`, `foot`
 - **Editors**: `helix`
 - **Utilities**:
   - `tmux` (Terminal multiplexer)
@@ -40,9 +40,7 @@ This repository includes configurations for:
 These dotfiles are organized to be easily managed. 
 
 - **Standard Apps**: Most configurations reside in their respective folders and are meant to be linked or copied to `~/.config/`.
-- **Suckless Tools**: Source code is provided for `dwm`, `st`, etc. You should enter each directory and run `make clean install` manually.
-
-*Note: A local `sync.sh` script is used to keep this repository updated with the system's current configurations, but it is not included in the repository commits.*
+- **Suckless Tools**: Source code is provided for `dwm`, etc. You should enter each directory and run `make clean install` manually.
 
 ---
 *Stay Minimal.*
