@@ -1,12 +1,6 @@
 # Suckless build artifacts
 *.o
 *.out
-config.h
-dwm
-st
-dmenu
-slock
-slstatus
 
 # System files
 .DS_Store
