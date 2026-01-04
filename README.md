@@ -43,5 +43,9 @@ These dotfiles are organized to be easily managed.
 - **Standard Apps**: Most configurations reside in their respective folders and are meant to be linked or copied to `~/.config/`.
 - **Suckless Tools**: Source code is provided for `dwm`, etc. You should enter each directory and run `make clean install` manually.
 
+## Wallpapers!
+
+I (finally) managed to compress my ![wallpapers](wallpapers). So, enjoy!
+
 ---
 *Stay Minimal.*
