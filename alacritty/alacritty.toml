@@ -1,9 +1,8 @@
 [general]
-# Configurazione di Alacritty (TOML)
-
-# Importa i colori generati da Pywal
 import = ["/home/axel/.cache/wal/colors-alacritty.toml"]
 
+[colors.primary]
+foreground = "#ffffff"
 
 # Sezione relativa alle impostazioni della finestra
 [window]
@@ -12,7 +11,7 @@ padding = { x = 3, y = 3 }
 # Regola il padding dinamicamente per mantenere il contenuto centrato
 dynamic_padding = true
 # Imposta l'opacità dello sfondo (0.0 è trasparente, 1.0 è opaco)
-opacity = 0.90
+opacity = 1.0
 # Gestisce le decorazioni della finestra (setta a "full" per riavere i bordi)
 decorations = "none"
 

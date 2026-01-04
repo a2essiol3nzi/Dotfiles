@@ -11,7 +11,12 @@
   ],
   "modules-right": [
     "tray",
-    "group/expand"
+    //"group/expand"
+    "network",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "battery"
   ],
   "clock#1": {
     "format": "{:%H:%M}",
@@ -38,13 +43,7 @@
       "visible": "",
       "urgent": "",
       "default": ""
-    },
-    "always-visible": [
-      1,
-      2,
-      3,
-      4
-    ]
+    }
   },
   "pulseaudio": {
     "format": "{icon}  {volume:2}%",
@@ -57,7 +56,8 @@
         ""
       ]
     },
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "alacritty -e bluetoothctl"
   },
   "memory": {
     "interval": 5,
@@ -93,7 +93,7 @@
     "tooltip-format-disconnected": "Error",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} 🖧 ",
-    "on-click": "foot nmtui"
+    "on-click": "alacritty -e nmtui"
   },
   "tray": {
     "icon-size": 16
