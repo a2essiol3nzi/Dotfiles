@@ -35,6 +35,9 @@ This repository includes configurations for:
   - `dmenu` (Dynamic menu)
   - `slock` & `slstatus` (Suckless locking and status)
 - **Others**: `fontconfig`
+- **Scripts**:
+  - [`dotInstall.sh`](./dotInstall.sh)
+  - [`compress_walls.sh`](./compress_walls.sh)
 
 ## 🚀 Installation
 

@@ -2,6 +2,9 @@
 *.o
 *.out
 
+# todo
+TODO
+
 # System files
 .DS_Store
 *~

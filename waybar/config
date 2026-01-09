@@ -96,7 +96,7 @@
     "on-click": "alacritty -e nmtui"
   },
   "tray": {
-    "icon-size": 16
+    "icon-size": 18
   },
   "custom/expand": {
     "format": " ",
