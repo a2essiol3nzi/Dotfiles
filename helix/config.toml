@@ -44,12 +44,10 @@ mode.select = "SELECT"
 
 
 [keys.normal]
-# estende la selezione sopra invece che sotto
 X = "extend_line_above"
-# Ctrl + w per chiudere il buffer corrente
 "C-w" = ":buffer-close"
-# Ctrl + s per salvare un file
 "C-s" = ":w"
+"C-g" = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.select]
 "{" = "goto_next_paragraph"
