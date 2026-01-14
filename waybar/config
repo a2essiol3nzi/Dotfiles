@@ -12,7 +12,7 @@
   "modules-right": [
     "tray",
     //"group/expand"
-    "network",
+    //"network",
     "cpu",
     "memory",
     "pulseaudio",
@@ -83,18 +83,18 @@
     ],
     "format-charging": "󰂄 {capacity}%"
   },
-  "network": {
-    "format-icons": {
-      "wifi": "",
-      "ethernet": "",
-      "disconnected": ""
-    },
-    "format": "{icon} ",
-    "tooltip-format-disconnected": "Error",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} 🖧 ",
-    "on-click": "alacritty -e nmtui"
-  },
+  // "network": {
+  //   "format-icons": {
+  //     "wifi": "",
+  //     "ethernet": "",
+  //     "disconnected": ""
+  //   },
+  //   "format": "{icon} ",
+  //   "tooltip-format-disconnected": "Error",
+  //   "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+  //   "tooltip-format-ethernet": "{ifname} 🖧 ",
+  //   "on-click": "alacritty -e nmtui"
+  // },
   "tray": {
     "icon-size": 18
   },
