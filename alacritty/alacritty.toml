@@ -39,3 +39,10 @@ style = { shape = "Block", blinking = "On" }
 # Definisce la variabile TERM per identificare il terminale nel sistema
 TERM = "alacritty"
 
+[keyboard]
+bindings = [
+    { key = "H", mods = "Super", chars = "\u001Bh" },
+    { key = "J", mods = "Super", chars = "\u001Bj" },
+    { key = "K", mods = "Super", chars = "\u001Bk" },
+    { key = "L", mods = "Super", chars = "\u001Bl" },
+]

@@ -7,7 +7,10 @@ line-number = "relative"
 bufferline = "multiple" # shows bufferline when more than one buffer
 mouse = false
 color-modes = true
+end-of-line-diagnostics = "hint"
 
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 # Render whitespace characters
 [editor.whitespace.render]
@@ -15,23 +18,19 @@ space = "none"
 tab = "all"
 newline = "none"
 
-
 # changes the cursor shape depending on the mode you're in. 
 [editor.cursor-shape] 
 insert = "bar"
 normal = "block"
 select = "underline"
 
-
 [editor.soft-wrap]
 enable = true
-
 
 [editor.indent-guides]
 render = true
 skip-levels = 1
 #character = "▏"  # Some characters that work well: "▏", "┆", "┊", "⸽"
-
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "version-control", "read-only-indicator", "file-modification-indicator"]
@@ -43,10 +42,12 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 
+
 [keys.normal]
 X = "extend_line_above"
 "C-w" = ":buffer-close"
 "C-s" = ":w"
+# lazygit integration
 "C-g" = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.select]
