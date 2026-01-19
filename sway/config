@@ -26,8 +26,30 @@ gaps outer 3
 # Configure the default border:
 default_border pixel 2
 
-# Set the Wallpaper:
+#========================#
+# Output Configuration   #
+#========================#
+# Wallpaper
 output * bg $wallpaper fill
+
+# --- Laptop Screen (eDP-1) ---
+# Ottieni i nomi delle uscite con: swaymsg -t get_outputs
+# Se sul laptop vedi tutto PICCOLO, aumenta lo scale (es. 1.2 o 1.5)
+output eDP-1 {
+    scale 1.1
+}
+
+# --- External Monitor (HDMI-A-1) ---
+# Se sul monitor esterno vedi tutto ENORME, lascia scale a 1
+# Puoi anche definire la posizione (pos x y) e la risoluzione (res WxH)
+output HDMI-A-1 {
+    scale 1
+    # res 1920x1080
+    # pos 0 0
+}
+
+# Esempio per DisplayPort (DP-1)
+output DP-1 scale 1
 
 
 #====================================#
@@ -243,7 +265,7 @@ bindsym $mod+p exec $drun
 bindsym $mod+Shift+c kill
 
 # Open terminal emulator:
-set $term alacritty
+set $term kitty
 bindsym Mod4+Return exec $term
 
 # Launch your browser:
@@ -253,7 +275,7 @@ bindsym Mod4+b exec zen-browser
 bindsym Mod4+f exec pcmanfm
 
 # PassShow
-bindsym $mod+Mod4+p exec alacritty -e "$HOME/Projects/My_Ideas/bin/wrapper_pass"
+bindsym $mod+Mod4+p exec kitty "$HOME/Projects/My_Ideas/bin/wrapper_pass"
 
 # Take a screenshot
 bindsym Print exec ~/.config/sway/Scripts/screenshot.sh

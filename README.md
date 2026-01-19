@@ -26,7 +26,7 @@ Here are some snapshots of the setup:
 This repository includes configurations for:
 
 - **Window Managers**: `dwm`, `sway`, `niri`
-- **Terminals**: `alacritty`, `foot`
+- **Terminals**: `alacritty`, `kitty`, `foot`, `st`
 - **Editors**: `helix`
 - **Utilities**:
   - `tmux` (Terminal multiplexer)
@@ -34,21 +34,21 @@ This repository includes configurations for:
   - `waybar` (Status bar)
   - `dmenu` (Dynamic menu)
   - `slock` & `slstatus` (Suckless locking and status)
-- **Others**: `fontconfig`
+- **Others**: `fontconfig`, `fastfetch`
 - **Scripts**:
-  - [`dotInstall.sh`](./dotInstall.sh)
-  - [`compress_walls.sh`](./compress_walls.sh)
+  - [`dotInstall.sh`](./dotInstall.sh) (Automated symlink installation)
+  - [`compress_walls.sh`](./compress_walls.sh) (Wallpaper optimization)
 
 ## 🚀 Installation
 
 These dotfiles are organized to be easily managed. 
 
-- **Standard Apps**: Most configurations reside in their respective folders and are meant to be linked or copied to `~/.config/`.
-- **Suckless Tools**: Source code is provided for `dwm`, etc. You should enter each directory and run `make clean install` manually.
+- **Standard Apps**: Most configurations (like `kitty`, `helix`, `sway`) reside in their respective folders and are meant to be linked to `~/.config/`. You can use the included `./dotInstall.sh` script to automate this.
+- **Suckless Tools**: Source code is provided for `dwm`, `st`, etc. You should enter each directory and run `make clean install` manually.
 
 ## Wallpapers!
 
-I (finally) managed to compress my ![wallpapers](wallpapers). So, enjoy!
+I (finally) managed to compress my [wallpapers](wallpapers). So, enjoy!
 
 ---
 *Stay Minimal.*

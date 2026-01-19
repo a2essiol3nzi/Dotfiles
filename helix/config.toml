@@ -1,5 +1,5 @@
 # editor theme, by default it's the purple one
-theme = "catppuccin_mocha"
+theme = "axelnight"
 
 [editor]
 scrolloff = 999
@@ -33,8 +33,8 @@ skip-levels = 1
 #character = "▏"  # Some characters that work well: "▏", "┆", "┊", "⸽"
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "version-control", "read-only-indicator", "file-modification-indicator"]
-center = []
+left = ["mode", "spinner", "version-control", "read-only-indicator", "file-modification-indicator"]
+center = ["file-name",]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
 mode.normal = "NORMAL"

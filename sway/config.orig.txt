@@ -6,7 +6,7 @@
 # Appearance and Theming #
 #========================#
 # Use pywal for color scheme
-# -> "wal -i <pathtowallpaper>" command will automaticly change the Wallpaper and general theme
+# -> "wal [optional flags] -i <pathtowallpaper>" command will automaticly change the Wallpaper and general theme
 include $HOME/.cache/wal/colors-sway
 
 # Declare Colors:
@@ -14,7 +14,7 @@ set $color_urgent #fb4934
 
 # Set Colors:           Border              Background          Text            Indicator           Child Border
 client.background       $background
-client.focused          $color4             $color4             $foreground     $color4             $color4
+client.focused          $color7             $color7             $background     $color7             $color7
 client.focused_inactive $color8             $color4             $foreground     $foreground         $color8
 client.unfocused        $color8             $background         $foreground     $color4             $color8
 client.urgent           $color_urgent       $color_urgent       $color_urgent   $color_urgent       $color_urgent
@@ -59,6 +59,9 @@ exec swayidle -w \
     timeout 570 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep $lock
+
+# Autostart applications
+exec nm-applet --indicator
 
 # Screen locking (manual)
 set $lock_screen exec bash ~/.config/sway/Scripts/lockscreen_sway.sh
@@ -240,23 +243,17 @@ bindsym $mod+p exec $drun
 bindsym $mod+Shift+c kill
 
 # Open terminal emulator:
-set $term foot
+set $term alacritty
 bindsym Mod4+Return exec $term
 
 # Launch your browser:
 bindsym Mod4+b exec zen-browser
 
-# Open notes application:
-# bindsym Mod4+n exec obsidian
-
 # Open file manager
 bindsym Mod4+f exec pcmanfm
 
-# Open the best terminal editor, helix <3
-bindsym Mod4+e exec foot helix
-
 # PassShow
-bindsym $mod+Mod4+p exec foot "$HOME/Projects/My_Ideas/bin/my_passmanager"
+bindsym $mod+Mod4+p exec alacritty -e "$HOME/Projects/My_Ideas/bin/wrapper_pass"
 
 # Take a screenshot
 bindsym Print exec ~/.config/sway/Scripts/screenshot.sh

@@ -1,7 +1,7 @@
 /* Font globale */
 * {
   font-family: "Adwaita Sans";
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Finestra principale */
@@ -17,7 +17,6 @@ window#waybar {
 #memory,
 #cpu,
 #battery,
-#network,
 #tray {
   padding: 0 7px;
 }
