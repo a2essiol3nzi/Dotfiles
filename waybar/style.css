@@ -18,7 +18,7 @@ window#waybar {
 #cpu,
 #battery,
 #tray {
-  padding: 0 7px;
+  padding: 0 6px;
 }
 
 #workspaces button {

@@ -20,8 +20,8 @@ client.unfocused        $color8             $background         $foreground     
 client.urgent           $color_urgent       $color_urgent       $color_urgent   $color_urgent       $color_urgent
 
 # Add gaps in between all application windows:
-gaps inner 3
-gaps outer 3
+gaps inner 5
+gaps outer 5
 
 # Configure the default border:
 default_border pixel 2
@@ -50,6 +50,9 @@ output HDMI-A-1 {
 
 # Esempio per DisplayPort (DP-1)
 output DP-1 scale 1
+
+# Cursor theme
+seat seat0 xcursor_theme Bibata-Modern-DodgerBlue 22
 
 
 #====================================#

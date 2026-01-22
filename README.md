@@ -7,13 +7,14 @@ Welcome to my personal collection of configuration files for Arch Linux. This re
 Here are some snapshots of the setup:
 
 <p align="center">
-  <img src="images/setup-040126.png" alt="Latest Setup" width="800px">
+  <img src="images/setup-230126.png" alt="Latest Setup" width="800px">
 </p>
 
 <details>
   <summary>More Screenshots</summary>
   
   ### Previous Iterations
+  ![Setup 04-01-26](images/setup-040126.png)
   ![Setup 27-12-25](images/setup-271225.png)
   ![Setup 24-11-25](images/setup-241125.png)
   ![Setup 12-10-25](images/setup-121025.png)
