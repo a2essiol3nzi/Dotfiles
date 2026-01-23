@@ -87,6 +87,10 @@ exec swayidle -w \
 
 # Autostart applications
 exec nm-applet --indicator
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-DodgerBlue'
+    gsettings set org.gnome.desktop.interface cursor-size 22
+}
 
 # Screen locking (manual)
 set $lock_screen exec bash ~/.config/sway/Scripts/lockscreen_sway.sh
