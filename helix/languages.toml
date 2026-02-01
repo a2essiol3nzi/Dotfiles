@@ -21,6 +21,11 @@ language-servers = [ "scls", "clangd" ]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
+name = "cpp"
+language-servers = [ "scls", "clangd" ]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
 name = "java"
 language-servers = [ "scls", "jdtls" ]
 indent = { tab-width = 4, unit = "    " }
@@ -40,6 +45,7 @@ file-types = [
 [[language]]
 name = "rust"
 language-servers = [ "scls", "rust-analyzer" ]
+indent = { tab-width = 4, unit = "    " }
 
 # --> introduce a new language to enable completion on any doc by forcing set language with :set-language stub
 #[[language]]

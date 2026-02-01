@@ -25,3 +25,7 @@ window#waybar {
   padding: 0 2px;
   color: #fdf6e3;
 }
+
+#workspaces button.focused {
+  color: #268bd2;
+}
