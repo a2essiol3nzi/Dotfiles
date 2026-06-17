@@ -1,0 +1,37 @@
+/* Font globale */
+* {
+  font-family: "Adwaita Sans";
+  font-size: 15px;
+}
+
+/* Finestra principale */
+window#waybar {
+  background-color: rgba(18, 18, 18, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: #fdf6e3;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#network,
+#tray,
+#custom-expand {
+  padding: 0 10px;
+  margin: 3px 2px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button {
+  padding: 0 2px;
+  color: #fdf6e3;
+}
+
+#workspaces button.focused {
+  color: #268bd2;
+}

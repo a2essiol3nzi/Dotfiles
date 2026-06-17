@@ -1,0 +1,58 @@
+# LSP configuration file
+
+# introduce new language server
+[language-server.scls]
+command = "simple-completion-language-server"
+
+[language-server.scls.config]
+feature_words = false                 # enable completion by word
+feature_snippets = true              # enable snippets
+snippets_first = true                # completions will return before snippets by default
+snippets_inline_by_word_tail = false # suggest snippets by WORD tail, for example text `xsq|` become `x^2|` when snippet `sq` has body `^2`
+feature_unicode_input = false        # enable "unicode input"
+feature_paths = true                 # enable path completion
+feature_citations = false            # enable citation completion (only on `citation` feature enabled)
+
+# Enhanced clangd configuration for C/C++
+[language-server.clangd]
+command = "clangd"
+args = [
+  "--background-index",            # Serve per Rinomina e Trova Definizioni in tutto il progetto
+  "--header-insertion=never",      # Evita blocchi della CPU durante gli include
+  "--completion-style=detailed",   # Serve per vedere i Doc delle funzioni nei suggerimenti
+  "--clang-tidy",                  # Serve per avere la diagnostica (errori/avvisi) avanzata
+  "--pch-storage=memory",          # Velocizza tutto usando la RAM invece del disco
+]
+
+# append language server to existed languages
+[[language]]
+name = "cpp"
+language-servers = [ "clangd", "scls" ] # scls è opzionale, puoi lasciare solo clangd
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "c"
+language-servers = [ "clangd", "scls" ]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "java"
+language-servers = [ "jdtls", "scls" ]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff-lsp", "scls" ]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "json"
+language-servers = [ "vscode-json-language-server", "scls" ]
+file-types = [
+  { glob = "config" }
+]
+
+[[language]]
+name = "nix"
+language-servers = [ "nil", "scls" ]
+indent = { tab-width = 4, unit = "    " }

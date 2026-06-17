@@ -1,0 +1,97 @@
+// -*- mode: json -*-
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "group/expand"
+  ],
+  "modules-center": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "clock"
+  ],
+  "clock": {
+    "format": "  {:%H:%M  |  %a %d %b}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-middle": "shift_up",
+      "on-click": "shift_down"
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "headphones": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 5
+  },
+  "memory": {
+    "interval": 15,
+    "format": "  {percentage}%"
+  },
+  "cpu": {
+    "interval": 15,
+    "format": " {usage}%"
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "󰂄 {capacity}%"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "custom/expand": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/endpoint": {
+    "format": "|",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-to-right": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/expand",
+      "tray",
+      "battery",
+      "cpu",
+      "memory",
+      "pulseaudio",
+      "custom/endpoint"
+    ]
+  }
+}

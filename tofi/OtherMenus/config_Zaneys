@@ -1,0 +1,37 @@
+# ███████╗ █████╗ ███╗   ██╗███████╗██╗   ██╗███████╗
+# ╚══███╔╝██╔══██╗████╗  ██║██╔════╝╚██╗ ██╔╝██╔════╝
+#   ███╔╝ ███████║██╔██╗ ██║█████╗   ╚████╔╝ ███████╗
+#  ███╔╝  ██╔══██║██║╚██╗██║██╔══╝    ╚██╔╝  ╚════██║
+# ███████╗██║  ██║██║ ╚████║███████╗   ██║   ███████║
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚══════╝
+# Not my file, this is the author (or at least where I copied the config):
+# https: //gitlab.com/Zaney
+
+# Font
+font = "Hack Nerd Font"
+font-size = 13
+
+# Window Style
+anchor = "top"
+width = 100%
+height = 100%
+outline-width = 0
+border-width = 0
+min-input-width = 130
+result-spacing = 30
+padding-top = 35%
+padding-bottom = 0
+padding-left = 35%
+padding-right = 0
+num-results = 5
+prompt-text = "Time to exec ;) "
+
+input-color = #7aa2f7
+selection-match-color = #9ece6a
+
+background-color = #0a1019
+selection-color = #2F417C
+text-color = #c1c3c5
+
+clip-to-padding = false
+require-match = false

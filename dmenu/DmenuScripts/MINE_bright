@@ -1,0 +1,22 @@
+#!/bin/bash
+
+while true; do
+    # Ottieni la luminosità corrente
+    CURRENT=$(brightnessctl | grep -oP '\d+(?=%)')
+    
+    # Mostra dmenu e cattura l'output
+    NEW=$(dmenu -p "Luminosità [$CURRENT%]:" 2>/dev/null)
+    
+    # Esci se premuto ESC o valore vuoto
+    if [ -z "$NEW" ]; then
+        exit 0
+    fi
+    
+    # Imposta la luminosità se il valore è valido
+    if [[ "$NEW" =~ ^[0-9]+$ ]] && ((NEW >= 0 && NEW <= 100)); then
+        brightnessctl set "${NEW}%"
+        # Non uscire, continua il loop
+    else
+        echo "Valore non valido (0-100%)" | dmenu -p "Errore:" -l 1
+    fi
+done

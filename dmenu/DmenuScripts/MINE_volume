@@ -1,0 +1,22 @@
+#!/bin/bash
+
+while true; do
+    # Mostra il volume attuale
+    VOLUME=$(amixer get Master | grep -oP '\d+%' | head -1 | tr -d '%')
+    
+    # Mostra dmenu e cattura l'output
+    NEW_VOLUME=$(dmenu -p "Imposta volume [$VOLUME%]:" 2>/dev/null)
+    
+    # Esci se premuto ESC o valore vuoto
+    if [ -z "$NEW_VOLUME" ]; then
+        exit 0
+    fi
+    
+    # Imposta il volume se il valore è valido
+    if [[ "$NEW_VOLUME" =~ ^[0-9]+$ ]] && ((NEW_VOLUME >= 0 && NEW_VOLUME <= 100)); then
+        amixer set Master "${NEW_VOLUME}%"
+        # Non uscire, continua il loop
+    else
+        echo "Valore non valido (0-100%)" | dmenu -p "Errore:" -l 1
+    fi
+done

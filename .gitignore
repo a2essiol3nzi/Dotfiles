@@ -1,0 +1,22 @@
+# Suckless build artifacts
+*.o
+*.out
+
+# Zsh artifacts & history
+.zsh_history
+.zcompdump*
+*.zwc
+
+# Utility Scripts (GEMINI.md)
+dotInstall.sh
+sync.sh
+
+# todo
+TODO
+
+# System files
+.DS_Store
+*~
+
+# gemini files
+GEMINI.md

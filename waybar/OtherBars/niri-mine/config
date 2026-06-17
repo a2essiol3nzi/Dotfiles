@@ -1,0 +1,119 @@
+// -*- mode: json -*-
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": [
+		"group/expand"
+	],
+	"modules-center": [
+		"niri/window"
+	],
+	"modules-right": [
+		"clock#1",
+		"clock#2"
+	],
+	"niri/window": {
+		"format": "{app_id}",
+		"rewrite": {
+			"kitty": "Kitty  ",
+			"zen": "Zen 󰜏",
+			"obsidian": "Obsidian  ",
+			"spotify": "Spotify  "
+		}
+	},
+	"clock#1": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%b,%d}",
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"calendar": {
+			"format": {
+				"today": "<span color='#fAfBfC'><b>{}</b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "shift_up",
+			"on-click": "shift_down"
+		}
+	},
+	"pulseaudio": {
+		"format": "{icon}  {volume:2}%",
+		"format-bluetooth": " {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5
+	},
+	"memory": {
+		"interval": 5,
+		"format": "  {percentage}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": " {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"format-charging": "󰂄 {capacity}%"
+	},
+	"network": {
+		"format-icons": {
+			"wifi": "",
+			"ethernet": "",
+			"disconnected": ""
+		},
+		"format": "{icon}",
+		"tooltip-format-disconnected": "Error",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} 🖧 ",
+		"on-click": "kitty nmtui"
+	},
+	"tray": {
+		"icon-size": 17,
+		"spacing": 10
+	},
+	"custom/expand": {
+		"format": "  ",
+		"tooltip": false
+	},
+	"custom/endpoint": {
+		"format": ">",
+		"tooltip": false
+	},
+	"group/expand": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 600,
+			"transition-to-right": true,
+			"click-to-reveal": true
+		},
+		"modules": [
+			"custom/expand",
+			"tray",
+			"battery",
+			"cpu",
+			"memory",
+			"pulseaudio",
+			"custom/endpoint"
+		]
+	}
+}
