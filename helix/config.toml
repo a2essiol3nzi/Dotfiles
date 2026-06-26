@@ -7,7 +7,7 @@ line-number = "relative"
 bufferline = "multiple" # shows bufferline when more than one buffer
 color-modes = true
 end-of-line-diagnostics = "hint"
-rulers = [88]
+rulers = [80]
 
 [editor.lsp]
 display-messages = true
