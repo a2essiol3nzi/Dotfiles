@@ -5,10 +5,8 @@
 #========================#
 # Appearance and Theming #
 #========================#
-# Use pywal for color scheme
-# -> "wal [optional flags] -i <pathtowallpaper>" command will automaticly change the Wallpaper and general theme
 include $HOME/.cache/wallust/colors-sway
-set $wallpaper /home/axel/Pictures/Wallpapers/rainy_cloud.jpg
+set $wallpaper /home/axel/Pictures/Wallpapers/macosGoldenGate_dark.png
 # Declare Colors:
 set $color_urgent #fb4934
 
@@ -276,7 +274,7 @@ bindsym Mod4+b exec zen
 bindsym Mod4+f exec pcmanfm
 
 # PassShow
-bindsym $mod+Mod4+p exec kitty -- "$HOME/Projects/My_Ideas/scripts/wrapper_pass.sh"
+bindsym $mod+Mod4+p exec kitty -- "bash $HOME/Projects/My_Ideas/scripts/wrapper_pass.sh"
 
 # Take a screenshot
 bindsym Print exec ~/.config/sway/Scripts/screenshot.sh
