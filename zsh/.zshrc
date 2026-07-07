@@ -46,7 +46,7 @@ fi
 zstyle ':completion:*' menu select
 
 # --- ALIAS ---
-export EDITOR=helix
+export EDITOR=hx
 
 alias ls='ls --color=auto'
 alias l='ls'
@@ -61,8 +61,9 @@ alias kicat='kitten icat'
 alias kifont='kitty +list-fonts --full-name'
 alias ssh='kitty +kitten ssh'
 
-alias nrs="sudo nixos-rebuild switch --flake ~/Projects/nixos-dotfiles#ZeNix"
-alias nrb="sudo nixos-rebuild boot --flake ~/Projects/nixos-dotfiles#ZeNix"
+alias nrs="sudo nixos-rebuild switch --flake ~/Projects/Dotfiles/nixos-dotfiles#ZeNix";
+alias nrb="sudo nixos-rebuild boot --flake ~/Projects/Dotfiles/nixos-dotfiles#ZeNix";
+alias nuf="sudo nix flake update --flake ~/Projects/Dotfiles/nixos-dotfiles"
 alias ngc="sudo nix-collect-garbage -d"
 
 # --- TOKYO NIGHT PROMPT ---
@@ -78,7 +79,8 @@ zstyle ':vcs_info:*' check-for-changes true
 # PROMPT: Path (Blue/Cyan) + Git + Arrow (Magenta)
 # Colore 111: Blue/Cyan TokyoNight
 # Colore 141: Magenta TokyoNight
-PROMPT='%F{111}%~${vcs_info_msg_0_} %F{141}❯ %f'
+PROMPT='%F{111}%~${vcs_info_msg_0_}%f
+%F{141}❯ %f'
 
 # --- KEYBINDINGS ---
 bindkey "^[[A" up-line-or-search
@@ -89,3 +91,8 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3;5~" delete-word
 bindkey "^H" backward-delete-word
+
+# Necessario per pinentry-curses: dice a gpg-agent su quale terminale disegnare il prompt della passphrase. Va impostato per ogni sessione
+# di shell (non in home.sessionVariables, che è statico per la sessione grafica e non conosce il tty di ogni singolo terminale).
+export GPG_TTY="$(tty)"
+

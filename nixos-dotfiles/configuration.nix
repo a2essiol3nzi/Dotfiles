@@ -1,4 +1,4 @@
-{ config, lib, pkgs, zen-browser, ... }:
+{ config, lib, pkgs, zen-browser, mango, ... }:
 
 {
   imports = [
@@ -62,6 +62,11 @@
   i18n.defaultLocale = "it_IT.UTF-8";
   console.keyMap = "it";
 
+  services.xserver.xkb = {
+    layout = "it";
+    variant = "";
+  };
+
   # ── zram Swap ───────────────────────────────────────────────────────────────
 
   # Swap in RAM compressa con zstd — nessuna partizione swap necessaria
@@ -78,22 +83,24 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        command = ''
+          ${pkgs.tuigreet}/bin/tuigreet \
+            --time \
+            --cmd sway
+            --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions
+        '';
         user = "greeter";
       };
     };
   };
-
   # Sway come window manager Wayland
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;  # compatibilità temi GTK in Wayland
   };
 
-  # Servizi per File Manager (PCManFM)
-  services.gvfs.enable = true;    # Cestino, montaggio dischi, rete
-  services.tumbler.enable = true;  # Anteprime immagini
-  services.udisks2.enable = true;  # Necessario per il montaggio dischi
+  # Mangowm come wm wayland
+  programs.mango.enable = true;
 
   # XDG portals: necessari per screen sharing, file picker, ecc. in Wayland
   xdg.portal = {
