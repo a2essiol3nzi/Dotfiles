@@ -22,8 +22,8 @@
       }
     },
     "actions": {
-      "on-click-right": "mode",
-      "on-click-middle": "shift_up",
+      "on-click-right": "shift_up",
+      "on-click-middle": "mode",
       "on-click": "shift_down"
     }
   },
@@ -41,11 +41,11 @@
     "scroll-step": 5
   },
   "memory": {
-    "interval": 15,
-    "format": "  {percentage}%"
+    "interval": 10,
+    "format": " {percentage}%"
   },
   "cpu": {
-    "interval": 15,
+    "interval": 5,
     "format": " {usage}%"
   },
   "battery": {

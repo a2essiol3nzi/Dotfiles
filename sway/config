@@ -6,7 +6,7 @@
 # Appearance and Theming #
 #========================#
 include $HOME/.cache/wallust/colors-sway
-set $wallpaper /home/axel/Pictures/Wallpapers/macosGoldenGate_dark.png
+set $wallpaper /home/axel/Pictures/Wallpapers/clouds.jpg
 # Declare Colors:
 set $color_urgent #fb4934
 
@@ -225,6 +225,8 @@ bindsym $mod+minus scratchpad show
 #===============================#
 input * {
     xkb_layout it
+    repeat_rate 35
+    repeat_delay 200
 }
 
 input type:touchpad {
@@ -271,13 +273,13 @@ bindsym Mod4+Return exec $term
 bindsym Mod4+b exec zen
 
 # Open file manager
-bindsym Mod4+f exec pcmanfm
+bindsym Mod4+f exec kitty yazi
 
 # PassShow
-bindsym $mod+Mod4+p exec kitty -- "bash $HOME/Projects/My_Ideas/scripts/wrapper_pass.sh"
+bindsym $mod+Mod4+p exec kitty -- "bash $HOME/Projects/My_Ideas/scripts/pass_fzf.sh"
 
 # Take a screenshot
-bindsym Print exec ~/.config/sway/Scripts/screenshot.sh
+bindsym Print exec "bash $HOME/Projects/Dotfiles/scripts/screenshot.sh"
 
 #======#
 # Misc #

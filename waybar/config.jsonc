@@ -23,7 +23,6 @@
     },
     "actions": {
       "on-click-right": "shift_up",
-      "on-click-middle": "mode",
       "on-click": "shift_down"
     }
   },
@@ -49,7 +48,7 @@
     "format": " {usage}%"
   },
   "battery": {
-    "interval": 30,
+    "interval": 15,
     "states": {
       "good": 95,
       "warning": 30,
@@ -70,7 +69,7 @@
     "spacing": 8
   },
   "custom/expand": {
-    "format": "",
+    "format": "",
     "tooltip": false
   },
   "custom/endpoint": {
