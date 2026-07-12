@@ -14,6 +14,7 @@ Here are some snapshots of the setup:
   <summary>More Screenshots</summary>
   
   ### Previous Iterations
+  ![Setup 03-07-26](images/setup-030726.png)
   ![Setup 23-01-26](images/setup-230126.png)
   ![Setup 04-01-26](images/setup-040126.png)
   ![Setup 27-12-25](images/setup-271225.png)

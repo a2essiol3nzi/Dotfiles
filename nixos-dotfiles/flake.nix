@@ -3,13 +3,10 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
+    # nixpkgs.url = "nixpkgs/nixos-unstable";
 
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    mango = {
-      url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -18,13 +15,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, mango, ... }: {
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }: {
     nixosConfigurations.ZeNix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit zen-browser mango; };
+      specialArgs = { inherit zen-browser; };
       modules = [
         ./configuration.nix
-        mango.nixosModules.mango
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -32,7 +28,7 @@
             useUserPackages = true;
             users.axel = import ./home.nix;
             backupFileExtension = "backup";
-            extraSpecialArgs = { inherit zen-browser mango; };
+            extraSpecialArgs = { inherit zen-browser; };
           };
         }
       ];

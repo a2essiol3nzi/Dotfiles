@@ -1,4 +1,4 @@
-{ config, lib, pkgs, zen-browser, mango, ... }:
+{ config, lib, pkgs, zen-browser, ... }:
 
 {
   imports = [
@@ -99,9 +99,6 @@
     wrapperFeatures.gtk = true;  # compatibilità temi GTK in Wayland
   };
 
-  # Mangowm come wm wayland
-  programs.mango.enable = true;
-
   # XDG portals: necessari per screen sharing, file picker, ecc. in Wayland
   xdg.portal = {
     enable = true;
@@ -165,6 +162,7 @@
     adwaita-icon-theme   # Tema di icone per la systray
     upower
     nftables
+    discord-ptb
   ];
 
   services.upower.enable = true;

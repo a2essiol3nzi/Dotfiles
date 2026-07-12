@@ -64,7 +64,7 @@
     # ── Completamenti e setopt ──────────────────────────────────────────────────
     initContent = ''
       # ZDOTDIR già impostato da Home Manager, ma history path dipende da esso
-      # HISTFILE="$HOME/.config/zsh/.zsh_history" VIENE GENERATO AUTOMATICAMENTE
+      # HISTFILE="$HOME/.config/zsh/.zsh_history" # VIENE GENERATO AUTOMATICAMENTE
 
       # Completamenti
       autoload -Uz compinit
@@ -243,6 +243,7 @@
 
     # Utilità
     unzip
+    zip
     wallust
     fastfetch
     btop
@@ -262,6 +263,6 @@
     pandoc
 
     # Programmazione generale
+    codex
     nil
-    
   ];}
