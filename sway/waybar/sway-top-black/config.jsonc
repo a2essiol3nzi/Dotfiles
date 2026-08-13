@@ -40,7 +40,7 @@
     "scroll-step": 5
   },
   "memory": {
-    "interval": 10,
+    "interval": 5,
     "format": " {percentage}%"
   },
   "cpu": {

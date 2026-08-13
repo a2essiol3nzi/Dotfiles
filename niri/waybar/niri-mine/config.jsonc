@@ -6,29 +6,34 @@
 		"group/expand"
 	],
 	"modules-center": [
-		"wlr/taskbar"
+		// "niri/window"
+		"clock#1",
 	],
 	"modules-right": [
-		"clock#1",
 		"clock#2"
 	],
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"icon-size": 18,
-		"tooltip-format": "{title}",
-		"on-click": "activate"
+	"niri/window": {
+		"format": "{app_id}",
+		"rewrite": {
+			"kitty": "Kitty  ",
+			"zen": "Zen 󰜏",
+			"obsidian": "Obsidian  ",
+			"spotify": "Spotify  "
+		}
 	},
 	"clock#1": {
-		"format": "{:%H:%M}",
+		"format": "{:%H:%M:%S}",
 		"tooltip": false
 	},
 	"clock#2": {
 		"format": "{:%b,%d}",
 		"tooltip-format": "<tt>{calendar}</tt>",
-		"calendar": {
-			"format": {
-				"today": "<span color='#fAfBfC'><b>{}</b></span>"
-			}
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
 		},
 		"actions": {
 			"on-click-right": "shift_up",
@@ -36,7 +41,7 @@
 		}
 	},
 	"pulseaudio": {
-		"format": "{icon}  {volume:2}%",
+		"format": "{icon} {volume}%",
 		"format-bluetooth": " {volume}%",
 		"format-muted": "MUTE",
 		"format-icons": {
@@ -50,28 +55,29 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "  {percentage}%"
+		"format": " {percentage}%"
 	},
-	"cpu": {
-		"interval": 5,
-		"format": " {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon}  {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		],
-		"format-charging": "󰂄 {capacity}%"
-	},
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%"
+  },
+  "battery": {
+    "interval": 15,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "󰂄 {capacity}%"
+  },
 	"network": {
 		"format-icons": {
 			"wifi": "",
@@ -84,22 +90,22 @@
 		"tooltip-format-ethernet": "{ifname} 🖧 ",
 		"on-click": "kitty nmtui"
 	},
-	"tray": {
-		"icon-size": 17,
-		"spacing": 10
-	},
-	"custom/expand": {
-		"format": "  ",
-		"tooltip": false
-	},
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "custom/expand": {
+    "format": "󰌽",
+    "tooltip": false
+  },
 	"custom/endpoint": {
-		"format": ">",
+		"format": "⮨",
 		"tooltip": false
 	},
 	"group/expand": {
 		"orientation": "horizontal",
 		"drawer": {
-			"transition-duration": 600,
+			"transition-duration": 500,
 			"transition-to-right": true,
 			"click-to-reveal": true
 		},
