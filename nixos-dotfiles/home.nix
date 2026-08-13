@@ -1,4 +1,4 @@
-{ config, pkgs, zen-browser, ... }:
+{ config, pkgs, zen-browser, hermes-agent, ... }:
 
 {
   home.username = "axel";
@@ -165,7 +165,7 @@
     enableSshSupport = false;  # true per usare la chiave GPG anche per SSH
   };
 
-  # ── Variabili d'ambiente Wayland ─────────────────────────────────────────────
+  # ── Variabili d'ambiente ─────────────────────────────────────────────
 
   home.sessionVariables = {
     NIXOS_OZONE_WL  = "1";           # abilita Wayland nativo per app Electron (es. VSCode)
@@ -178,6 +178,23 @@
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = 20;             # applicazione corretta cursore
   };
+
+  # ── Hermes Agent ─────────────────────────────────────────────────────────────
+
+  home.activation.hermesEnv = config.lib.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.hermes
+    if [ ! -f $HOME/.hermes/.env ]; then
+      ${pkgs.pass}/bin/pass show openrouter/hermes-key > $HOME/.hermes/.env.tmp 2>/dev/null \
+        && echo "OPENROUTER_API_KEY=$(cat $HOME/.hermes/.env.tmp)" > $HOME/.hermes/.env \
+        && rm $HOME/.hermes/.env.tmp
+    fi
+  '';
+
+  # ── Aggiunte Path ─────────────────────────────────────────────
+
+  # home.sessionPath = [
+  #   "${config.home.homeDirectory}/.local/bin"
+  # ];
 
   # ── Tema e Aspetto ──────────────────────────────────────────────────────────
 
@@ -255,6 +272,7 @@
     wlr-randr
     thunderbird
     qalculate-gtk
+    netcat-gnu
 
     # Produttività
     obsidian
@@ -264,5 +282,16 @@
 
     # Programmazione generale
     codex
+    hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.default
     nil
-  ];}
+    gcc
+    gnumake
+    python3
+    pyright
+    jdk
+    jdt-language-server
+    tinymist
+    clang-tools
+    jetbrains.idea
+  ];
+}

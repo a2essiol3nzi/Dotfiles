@@ -553,7 +553,7 @@ binds {
     Mod+shift+E hotkey-overlay-title=null { spawn-sh "niri msg output eDP-1 on"; }
 
     // use my_passmanager
-    Mod+Alt+P hotkey-overlay-title=null { spawn-sh "kitty $HOME/Projects/My_Ideas/bin/wrapper_pass"; }
+    Mod+Alt+P hotkey-overlay-title=null { spawn-sh "kitty $HOME/Projects/My_Ideas/scripts/pass_fzf.sh"; }
 
     // spawn browser, zen
     Mod+B hotkey-overlay-title="Spawn browser: zen" { spawn "zen-browser"; }

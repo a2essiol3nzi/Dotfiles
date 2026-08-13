@@ -35,10 +35,10 @@ name = "c"
 language-servers = [ "clangd", "scls" ]
 indent = { tab-width = 4, unit = "    " }
 
-[[language]]
-name = "java"
-language-servers = [ "jdtls", "scls" ]
-indent = { tab-width = 4, unit = "    " }
+# [[language]]
+# name = "java"
+# language-servers = [ "jdtls", "scls" ]
+# indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "python"
