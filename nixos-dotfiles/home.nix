@@ -243,9 +243,10 @@
     # Browser
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
-    # Terminale ed editor
+    # Editor
     kitty
     helix
+    pkgs.vscodium
 
     # Wayland ecosystem
     swaybg
@@ -292,6 +293,5 @@
     jdt-language-server
     tinymist
     clang-tools
-    jetbrains.idea
   ];
 }
