@@ -86,7 +86,6 @@
         command = ''
           ${pkgs.tuigreet}/bin/tuigreet \
             --time \
-            --cmd sway
             --sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions
         '';
         user = "greeter";
@@ -98,6 +97,8 @@
     enable = true;
     wrapperFeatures.gtk = true;  # compatibilità temi GTK in Wayland
   };
+
+  programs.niri.enable = true;
 
   # XDG portals: necessari per screen sharing, file picker, ecc. in Wayland
   xdg.portal = {
@@ -154,9 +155,11 @@
     vim
     wget
     git
+    tree
     btrfs-progs
     wayland
     xwayland
+    xwayland-satellite
     networkmanagerapplet # Fornisce nm-connection-editor
     blueman              # Fornisce blueman-manager
     adwaita-icon-theme   # Tema di icone per la systray

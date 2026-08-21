@@ -254,6 +254,7 @@
     swayidle
     swayimg
     waybar
+    niri
     bemenu
     grim
     slurp
@@ -282,7 +283,6 @@
     pandoc
 
     # Programmazione generale
-    codex
     hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.default
     nil
     gcc
