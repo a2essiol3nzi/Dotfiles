@@ -3,7 +3,7 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
-include "/home/axel/.cache/wal/colors-niri.kdl"
+include "/home/axel/.cache/wallust/colors-niri"
 
 // Input device configuration.
 // Find the full list of options on the wiki:
@@ -265,8 +265,8 @@ layout {
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
-spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/beach.jpg"
+spawn-sh-at-startup "waybar -c $HOME/.config/niri/waybar/niri-mine/config.jsonc -s $HOME/.config/niri/waybar/niri-mine/style.css"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/Wallpapers/beach.jpg"
 
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -297,7 +297,7 @@ screenshot-path "~/Pictures/Screenshots/screensh_%Y-%m-%d_%H-%M-%S.png"
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -309,8 +309,8 @@ animations {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
@@ -332,7 +332,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+P hotkey-overlay-title="Run an Application: bemenu" { spawn-sh "bemenu-run -i -l '10 down' -p Run:"; }
-    Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "~/Projects/Dotfiles/niri/Scripts/lockscreen_niri.sh"; }
+    Mod+Escape hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "$HOME/.config/niri/Scripts/lockscreen_niri.sh"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -556,11 +556,11 @@ binds {
     Mod+Alt+P hotkey-overlay-title=null { spawn-sh "kitty $HOME/Projects/My_Ideas/scripts/pass_fzf.sh"; }
 
     // spawn browser, zen
-    Mod+B hotkey-overlay-title="Spawn browser: zen" { spawn "zen-browser"; }
+    Mod+B hotkey-overlay-title="Spawn browser: zen" { spawn "zen"; }
     // fast web search
-    Mod+S hotkey-overlay-title="Fast web search" { spawn-sh "/home/axel/Projects/My_Ideas/scripts/web_search.sh"; }
+    // Mod+S hotkey-overlay-title="Fast web search" { spawn-sh "$HOME/Projects/My_Ideas/scripts/web_search.sh"; }
 
     // spawn file manager
-    // Mod+ { spawn "pcmanfm"; }
+    Mod+e { spawn-sh "kitty yazi"; }
 }
 

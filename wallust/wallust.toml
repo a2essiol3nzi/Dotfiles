@@ -47,6 +47,7 @@ palette = "saliencedark"
 # NOTE: prefer '' over "" for paths, avoids escaping.
 sway = { template = 'colors-sway', target = '~/.cache/wallust/colors-sway' }
 kitty = { template = 'colors-kitty', target = '~/.cache/wallust/colors-kitty'}
+niri = { template = 'colors-niri', target = '~/.cache/wallust/colors-niri'}
 
 [hooks]
 # Run commands when wallust is invoked. Useful to avoid scripting.
