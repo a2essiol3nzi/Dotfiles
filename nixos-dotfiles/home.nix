@@ -284,6 +284,7 @@
 
     # Programmazione generale
     hermes-agent.packages.${pkgs.stdenv.hostPlatform.system}.default
+    codex
     nil
     gcc
     gnumake
